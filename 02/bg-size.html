@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {border: 3px solid; height: 150px;}
+        .box1 {background : no-repeat url(img/lotus.png); background-size: contain;}
+        .box2 {height: 500px; width:100px; background-size: cover;} 
+        /* cover :  이미지를 빈공간없이 다 채우고 남으면 나머지(이미지) 잘림*/
+        /* contain :  이미지를 잘리지 않도록 박스 사이즈에 맞는 비율로 배치하고 남는 공간은 비움*/
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box1 box2"></div>
+</body>
+</html>

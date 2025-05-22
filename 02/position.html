@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { height: 3000px;}
+        .wrapper {background-color: pink; width: 300px; margin: 0 auto; position: relative;}
+        .box {width: 100px; height: 100px;}
+        .box1 {background-color: red; top: 10px; left: 100px; z-index: 100;}
+        .box2 {background-color: yellow; position: relative; top: 10px; left: 100px; z-index: 1000;}
+        /* top : 현위치(위)에서 10px , 왼쪽에서 100px  이동 */
+        .box3 {background-color: green; position: absolute; top: 10px; left: 100px;}
+        /* absolute : 원래 위치 벗어나서 절대적인 위치 찾는다 */
+        .box4 {background-color: blue; position: fixed; top: 50px; left: 100px;}
+        /* 겹침 발생 */
+        .box5 {background-color: black; position: absolute; top: 50px; left: 50px; z-index: 100;}
+        .box6 {background-color: purple; position: absolute; top: 100px; left: 50px;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+        <div class="box box5"></div>
+        <div class="box box6"></div>
+    </div>
+</body>
+</html>

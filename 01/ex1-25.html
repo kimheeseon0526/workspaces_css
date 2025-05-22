@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        /* :required {box-shadow:  00 2px 2px red;} */
+
+    </style>
+</head>
+<body>
+    <!-- 한줄 입력 요소 <input> -->
+     <form>
+        <label><input type="text" name="text" value="가나다라" maxlength="5"></label>
+        password <input type="password" name="pw" required>
+        <hr>
+        검색 <input type="search" name="search">
+        이메일 <input type="email" name="email">
+        전화번호 <input type="tel" name="tel">
+        <hr>
+        컬러 선택 <input type="color" name="color">
+        범위선택 <input type="range" name="range" min="1" max="5" step="2">
+        숫자 <input type="number" name="number" min="10" max="100" step="5">
+        <hr>
+        <input type="submit" name="전송">
+     </form>
+
+     <form>
+        <h3>radio</h3>
+        <p>지역 선택</p>
+        <label>서울<input type="radio" name="area" value="서울"></label>
+        <label for="kk"></label>경기</label><input type="radio" name="area" value="경기" id="kk">
+        <label>인천<input type="radio" name="area" value="인천" checked></label>
+        <hr>
+        <h3>checkbox</h3>
+        <p>피자 토핑</p>
+        <label>모든 토핑쓰<input type="checkbox" name="topping" value="all" id="toppingAll"> </label><br>
+        <label>페퍼로니<input type="checkbox" name="topping" value="pp"> </label><br>
+        <label>포테이토<input type="checkbox" name="topping" value="pt"></label><br>
+        <label>고메<input type="checkbox" name="topping" value="sp"></label><br>
+        <hr> 
+        <input type="reset" value="초기화">
+        <input type="button" value="버튼" onclick="alert(prompt('이름을 입력하세요') + '님 환영')">
+        <input type="image" src="images/bt.png" alt="검색">
+        <hr>
+        <button><img src="images/bt.png" alt="검색"></button>
+        <button>전송</button>
+     </form>
+     <script>
+        const all = document.querySelector("#toppingAll");
+        console.log(all);
+        all.addEventListener("change", e => {
+            // console.log(all.checked)
+            const toppings = document.querySelectorAll("[name='topping']")
+            for(let i = 0; i < toppings.length ; i++){
+                toppings[i].checked = all.checked;
+            }
+            // console.log(toppings.length);
+        });
+
+     </script>
+    
+</body>
+</html>

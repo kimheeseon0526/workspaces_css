@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @keyframes sample {
+            0% {background: firebrick; transform: translate(0,0);}
+            50% {background: cornflowerblue; transform: translate(30px, 20px);}
+            100% {background: forestgreen; transform: translate(0,0);}
+        }
+        p {
+            width: 100px; height: 100px;
+            padding: 10px; background: firebrick;
+            animation-name: sample;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate-reverse;
+        }
+        @keyframes space {
+            from {transform: rotateZ(0);}
+            to {transform: rotateZ(360deg);}
+        }
+       .space {
+            width: 200px; height: 200px; padding: 10px; 
+            transform: rotate(30deg, 30deg);
+            }
+            img {animation: space 1s linear infinite;}
+
+    </style>
+</head>
+<body>
+    <p>
+        animation...
+    </p>
+    <div class="space"><img src="img/bg_animation.png"></div>
+</body>
+</html>

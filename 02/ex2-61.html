@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu li {list-style-type: none;}
+        .menu li a{
+            display: block; width: 300px; height: 50px;
+            padding: 10px; margin-bottom: 10px;
+            background: #abc; text-indent: 10px;
+            transition: width 3s, color 1s;
+            color: #000; text-decoration: none;
+        }
+        .menu li a:hover{ width: 450px; color: #c00;}
+
+        .custom li {list-style: none; background-color: #fc0; padding: 16px; 
+                    width: 200px; margin-bottom: 10px;
+                    transition: all 3s ease .2s;
+                }
+        ul:hover{width: 1000px;}
+        ul:hover li:nth-child(1) {transition-timing-function: linear; background: red;}
+        ul:hover li:nth-child(2) {transition-timing-function: ease;}
+        ul:hover li:nth-child(3) {transition-timing-function: ease-in;}
+        ul:hover li:nth-child(4) {transition-timing-function: ease-out;}
+        ul:hover li:nth-child(5) {transition-timing-function: ease-in-out;}
+        ul:hover li:nth-child(6) {transition-timing-function: cubic-bezier(.8,-0.61,.41,-0.58);}
+    </style>
+</head>
+<body>
+    <h3>Moving menu</h3>
+    <ul class="menu">
+        <li><a href="#">메뉴1</a></li>
+        <li><a href="#">메뉴2</a></li>
+        <li><a href="#">메뉴3</a></li>
+        <li><a href="#">메뉴4</a></li>
+        <li><a href="#">메뉴5</a></li>
+    </ul>
+
+    <ul class="custom">
+        <li>lenear</li>
+        <li>ease</li>
+        <li>ease-in</li>
+        <li>ease-out</li>
+        <li>ease-in-out</li>
+        <li>cubic-bezier</li>
+    </ul>
+</body>
+</html>

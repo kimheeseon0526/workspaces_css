@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {width: 200px; border: 1px solid;}
+        p:nth-child(1){white-space: normal;}
+        p:nth-child(2){white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
+        p:nth-child(3){white-space: pre;}
+        p:nth-child(4){white-space: pre-wrap;}
+        p:nth-child(5){white-space: pre-line;}
+        div {border: 1px solid; display: inline-block; overflow-x: hidden; overflow-y: hidden;}
+        div img {transition: all .3s ease .005s;}
+        div img:hover {transform: scale(1.2);}
+
+        /* pre : preformated
+        normal* : 
+        nowrap : 부모속성요소를 넘어가면 감싸지 않는다
+        pre : 원래 쓰여진 그대로(내가쓴 원본 그대로)
+        pre-wrap : wapping은 하되 넘어갈거 같으면 다음 라인으로 넘겨
+        pre-line* : 행의 개행만 신경쓰는 것
+        */
+    </style>
+</head>
+<body>
+    <p>
+        public int add (int a, int b){
+            return a + b ;
+        }
+    </p>
+    <p>
+        public int add (int a, int b){
+            return a + b ;
+        }
+    </p>
+    <p>
+        public int add (int a, int b){
+            return a + b ;
+        }
+    </p>
+    <p>
+        public int add (int a, int b){
+            return a + b ;
+        }
+    </p>
+    <p>
+        public int add (int a, int b){
+            return a + b ;
+        }
+    </p>
+    <div>
+        <img src="img/bg_flower.png">
+    </div>
+</body>
+</html>

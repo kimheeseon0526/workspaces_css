@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gugi&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: '오버워치';
+            src: url('koverwatch.woff');
+        }
+        @font-face {
+            font-family: '메이플스토리';
+            src: url('Maplestory Bold.ttf');
+        }
+        .after-font {font-family : '오버워치';}
+        .after-font2 {font-family : '메이플스토리';}
+        .after-font3 {font-family : "Cute Font"; font-display: swap;}
+        .after-font4 {font-family : "Gugi"; font-display: block;}
+
+        /* 
+            font, img, mp4 등에서 발생하는 글리치 - 글자 깜빡임 현상
+            특히 폰트관련에서 FOIT(Flash of Invisible Text)
+        */
+
+        /* 
+            컬러(#6자리)
+            #rgb -> #rrggbb 로 인식
+            256 * 256 * 256
+            2^8 * 3
+            2^24 24bit
+        */
+
+    </style>
+    
+</head>
+<body>
+    <h1>폰트 적용 전 텍스트</h1>
+    <h1 class="after-font">폰트 적용 후 텍스트_오버워치</h1>
+    <h1 class="after-font2">폰트 적용 후 텍스트_메이플</h1>
+    <h1 class="after-font3">폰트 적용 후 텍스트_cute</h1>
+    <h1 class="after-font4">폰트 적용 후 텍스트_gugi</h1>
+</body>
+</html>

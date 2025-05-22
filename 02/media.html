@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* h2 {color: red;}
+        @media print{
+            h2 {color: blue;}
+          
+        } */
+
+         * {margin: 0; padding: 0; font-family:'맑은 고딕'; color: #eee;}
+         a {text-decoration: none; color: #222;}
+         body {background-color: #222;}
+         ul li {list-style: none;}
+         .clearfix::after {content: ''; display: block; clear: both;}
+        header, footer {background: #222; color: #eee; text-align: center; padding: 30px;}
+        header {background: #030303 url('https://tecoble.techcourse.co.kr/static/348a6c1ea3a4fa8b6990e3e3bf4e8490/20435/sample2.png')
+                no-repeat center right; background-size: cover;
+                }
+        header h1 {text-shadow: 0 0 7px black; }
+        nav {background: #444; }
+        .content {background: #666; text-align: center;}
+        nav, aside, .content{padding: 16px 0; min-height: 200px; text-align: center;}
+        .aside {color: #222;}
+        .card {width: 320px; margin: 16px auto; border-radius: 8px; overflow: hidden; background-color: #333;}
+        .card img {width: 100%;}
+        .card h3 {margin: 16px;}
+        .card p {text-align: right; padding: 16px; font-size: 13px;}
+
+
+        
+        nav {padding: 0; border-top: 1px solid #ddd; border-bottom: 1px solid#ddd;}
+        nav li a {display: block; text-align: center; background-color: #222; color: #eee;}
+        nav li:not(:first-child) a {border-top:  1px solid #ddd;}
+
+
+        /* 태블릿 반응형 */
+        @media screen and (min-width:768px) {
+            nav, .content{float: left;}
+            nav {width: 192px;}
+            .content {width: 576px;}
+            aside {clear: both;} 
+            .tab-cls {width: 768px; margin: 0 auto;}
+            .card {width: 264px; float: left; margin-left: 16px;}
+        }
+
+        /* pc 반응형 */
+        @media screen and (min-width:1200px){
+            .tab-cls {float: left; width: 900px;}
+            main {width: 1200px; margin: 0 auto;}
+            .content {width: 708px;}
+            aside {float: left; clear: none; width: 300px; } 
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- <h2>텍스트 테스트</h2> -->
+    
+     <header>
+     <h1>더좋은 반응형 디자인</h1>
+     </header>
+     <main class="clearfix">
+        <div class="tab-cls">
+        <nav>
+            <ul>
+                <li><a href="#">메뉴1</a></li>
+                <li><a href="#">메뉴2</a></li>
+                <li><a href="#">메뉴3</a></li>
+                <li><a href="#">메뉴4</a></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="card">
+                <a href="#">
+                <img src="https://img.danawa.com/shoppingClip/001/2025/05/16/shoppingClip1_1_20250516122935.jpg" alt="광고이미지">
+                <h3>친구추천</h3>
+                <p>보러가기 &gt;</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                <img src="https://img.danawa.com/shoppingClip/001/2025/05/16/shoppingClip1_1_20250516122935.jpg" alt="광고이미지">
+                <h3>친구추천</h3>
+                <p>보러가기 &gt;</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                <img src="https://img.danawa.com/shoppingClip/001/2025/05/16/shoppingClip1_1_20250516122935.jpg" alt="광고이미지">
+                <h3>친구추천</h3>
+                <p>보러가기 &gt;</p>
+                </a>
+            </div>
+            <div class="card">
+                <a href="#">
+                <img src="https://img.danawa.com/shoppingClip/001/2025/05/16/shoppingClip1_1_20250516122935.jpg" alt="광고이미지">
+                <h3>친구추천</h3>
+                <p>보러가기 &gt;</p>
+                </a>
+            </div>
+        </div>
+        </main>
+        </main>
+        <aside>
+            사이드바
+        </aside>
+     </main>
+     <footer>
+        <p>copyright &copy; all right reserved </p>
+     </footer>
+</body>
+</html>

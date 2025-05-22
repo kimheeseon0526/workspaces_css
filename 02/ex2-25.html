@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자간과 단어 간격, 가상클래스선택자</title>
+    <style>
+        .letter2 {letter-spacing: 5px;} /* 글자 간격 */
+        .letter3 {word-spacing: 2em;} /* 단어간격 간격 */
+
+        /* 가상클래스 선택자 
+
+            ~일때, ~할때
+            :visited -> 방문했을 때
+            :link -> 상태가 link일 때
+            :active -> 눌렀을 때
+            :hover -> 마우스 올렸을 때
+            :focus -> 초점이 있었을 때
+            -> 순서 지킬것
+
+        */
+        p a:visited {color: orange;} /*네이버 사이트 링크 타고 갔다가 돌아오면 글자 오렌지로 변경됨*/
+        p a:link {text-decoration: none; color: black;}
+        p a:hover , p a:focus {text-decoration: underline; color: blue;}
+        p a:active {text-decoration: none; color: magenta;}
+        .txt:hover, .txt:focus {color: red;}
+    </style>
+</head>
+<body>
+    <p>1990년형 노트북 빠이<br>잘가슈</p>
+    <p class="letter2">1990년형 노트북 빠이<br>잘가슈</p>
+    <p class="letter3">1990년형 노트북 빠이<br>잘가슈</p>
+    <p><a href="https://www.naver.com">네이버</a></p>
+    <p><a href="ex2-5.html">ex2-5</a></p>
+    <p class="txt" tabindex="1">일반 텍스트 구간</p>
+</body>
+</html>
