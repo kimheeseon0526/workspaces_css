@@ -46,3 +46,7 @@ arr.filter(a => a % 2 == 1).map(a => "값은 " + a).forEach(a => console.log(a))
 
 //scope 범위
 //전역변수(global variable), 지역변수(local variable)
+
+//filter와 map의 차이
+//filter : 조건에 맞는 인자만 가져와서 새로운 배열로 반환(반환값 true or false)
+//map : 요소를 순서대로 불러 그 함수의 반환값으로 새로운 배열 생성

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달력</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        table {border-collapse: collapse; width: 100%; max-width: 1200px; margin: auto;}
+        table, th, td {border: 1px solid black;}
+        table h2 {display: inline-block;}
+        table caption > * {margin: 16px 20px; vertical-align: top;}
+        table caption button {
+            border: 1px solid black; background: transparent; cursor : pointer;
+            width: 30px; height: 30px; line-height: 16px; border-radius: 50%;
+            transition: all .3s; margin-top: 20px; 
+        }
+        table caption button:hover {box-shadow: 0 0 3px black, 2px 5px 5px #ddd;}
+        th, td {height: 100px;}
+        td {vertical-align: top; padding: 16px;}
+        tr > *:first-child {color: red;}
+        tr > *:nth-child(7) {color: blue;}
+    </style>
+    <script>
+        function drawCalendar() {
+            const date = new Date();
+            const year = date.getFullYear();
+            const month = date.getMonth();
+            
+            const allMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; 
+            let lastDate = allMonths[month];
+            if(month === 1 && year % 4 === 0 && year % 100 !==0 || year % 400 === 0 ){
+                lastDate = 29;
+            }
+
+            date.setDate(1);
+            const firstDay = date.getDay();
+            
+            let str = "<tr>";
+            for(let i = -3; i <= lastDate; i++){
+                str += `<td>${i <= lastDate && i > 0 ? i : " "}</td>`;
+                if(i % 7 == 3){
+                    str += "</tr><tr>"
+                }
+            }
+            str +="<tr>"
+            document.querySelector("table tbody").innerHTML = str;
+        }
+
+        window.onload = function() {
+            drawCalendar();
+        }
+    
+    </script>
+</head>
+<body>
+    <table>
+        <caption>
+            <button><i class="fa-solid fa-angles-left"></i></button>
+            <button><i class="fa-solid fa-angle-left"></i></button>
+            <h2>2025.05</h2>
+            <button><i class="fa-solid fa-angle-right"></i></button>
+            <button><i class="fa-solid fa-angles-right"></i></button>
+        </caption>
+        <thead>
+        <tr>
+            <th>일</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+            <th>토</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>
