@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {padding: 20px; border: 1px solid;}
+    </style>
+    <!-- 이벤트 전파 
+     자손 -> 부모  : 이벤트 버블링 -->
+</head>
+<body>
+    <div onclick="alert(1)">
+        <div onclick="alert(2); event.stopPropagation()">
+            <!-- 2 번에서 alert 멈춤 -->
+            <div onclick="alert(3)">
+                <div onclick="alert(4)">헬로</div> <!-- 4 -> 3-> 2 -> 1 -->
+            </div>
+        </div>
+    </div>
+</body>
+</html>

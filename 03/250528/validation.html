@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .join-frm {width: 500px; margin: 0 auto; padding: 20px; box-sizing: border-box;}
+        .join-frm input {width: 95%; padding: 8px;}
+        .join-frm button {width: 455px; padding: 8px;}
+        .join-frm div {margin: 32px 0;}
+        .join-frm .valid-msg {font-size: 12px; color: red; visibility: hidden;}
+        .join-frm .valid-msg.active {visibility: visible;}
+
+    </style>
+</head>
+<body>
+    <!-- 아이디 영소문자만 허용
+        ,비밀번호 8글자이상
+        ,비밀번호 확인 비밀번호와 같은값
+        ,이름
+        ,이메일 이메일 유효성 검증 정규식-->
+
+        <form name="frm" class="join-frm">
+            <div>
+                <p><label for="id">아이디</label></p>
+                <p><input type="text" name="id" id="id"></p>
+                <p class="valid-msg">아이디는 영소문자로 입력하세요.</p>
+            </div>   
+            <div>
+                <p><label for="pw">비밀번호</label></p>
+                <p><input type="password" name="pw" id="pw"></p>
+                <p class="valid-msg">비밀번호는 8글자 이상이어야 합니다.</p>
+            </div>
+            <div>
+                <p><label for="pwck">비밀번호 확인</label></p>
+                <p><input type="password" name="pwck" id="pwck"></p>
+                <p class="valid-msg">비밀번호가 서로 일치하지 않습니다.</p>
+            </div>
+            <div>
+                <p><label for="name">이름</label></p>
+                <p><input type="text" name="name" id="name"></p>
+                <p class="valid-msg">이름은 두글자 이상 작성해주세요.</p>
+            </div>
+            <div>
+                <p><label for="email">이메일</label></p>
+                <p><input type="text" name="email" id="email"></p>
+                <p class="valid-msg">유효한 이메일 양식에 맞게 써주세요.</p>
+            </div>
+            <button>회원가입</button>
+          
+        </form>
+        <script>
+            function validate(target, regexp) {
+                return regexp.test(target);
+                // return /[a-z]/.test(document.querySelector("#id").value)
+            }
+            // console.log(document.querySelectorAll(".join-frm input"));
+            const inputs = document.querySelectorAll(".join-frm input");
+            const regexps = {
+                id : /^[a-z]+$/,
+                pw : /^[\w]{8,}/,
+                pwck : null,
+                name : /^[가-힣A-Za-z]{2,}$/,
+                email :  /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/
+            }
+            function validateField(input){
+                const name = input.id;
+                    const msgClassList = input.closest("div").querySelector(".valid-msg").classList;
+                    console.log(name);
+                    
+                    if(name === "pwck") {
+                        const valid = document.querySelector("#pw").value === input.value;
+                        msgClassList.toggle("active", !valid);
+                        return valid;
+                    }else if(regexps[name]) {
+                        const valid = validate(input.value, regexps[name]);
+                        msgClassList.toggle("active", !valid);  //유효하지 않을 때 active 
+                        return valid;
+                    }
+            }
+
+            inputs.forEach(input => {
+                input.addEventListener("input",() => validateField(input));
+                });
+
+
+            document.querySelector(".join-frm").addEventListener("submit", e => {
+                let isValid = true;
+                inputs.forEach(input => {
+                    const valid = validateField(input);
+                    debugger;
+                    if(!valid) isValid = false;
+                })
+
+                if(!isValid){
+                    event.preventDefault(); //submit방지
+                    alert("입력값 확인")
+                }
+                console.log('확인');
+                
+            });
+                       
+           //유효성 검사 ->  for each 문으로
+            // document.querySelector("#id").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList
+            //     validate(this.value, /^[a-z]+$/) ? cl.remove("active") : cl.add("active");
+            //     // console.log(cl);
+            //     // cl.add("active")
+            //     // console.log(validate(document.querySelector("#id").value, /^[a-z]+$/));
+            // }
+            // document.querySelector("#pw").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList
+            //     validate(this.value, /^[\w]{8,}/) ? cl.remove("active") : cl.add("active");
+            // }
+            // document.querySelector("#pwck").onkeyup = function() {
+            //     const cl = this.closest("div").querySelector(".valid-msg").classList
+            //     validate(this.value, new RegExp("^"+ document.querySelector("#pw").value+"$")) ? cl.remove("active") : cl.add("active"); 
+            // }
+            // document.querySelector("#name").onkeyup = function() {
+            //     const cl = this.closest(".div").querySelector(".valid-msg").classList
+            //     validate(this.value, /^[\w]{2,}/) ? cl.remove("active") : cl.add("active"); 
+            // }
+            // document.querySelector("#email").onkeyup = function() {
+            //     const cl = this.closest(".div").querySelector(".valid-msg").classList
+            //     validate(this.value, /^[\w-.]+@([\w-]+.)+[\w-]{2,4}$/g) ? cl.remove("active") : cl.add("active"); 
+            // }
+
+        </script>
+</body>
+</html>

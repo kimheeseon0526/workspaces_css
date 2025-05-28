@@ -37,13 +37,19 @@
             const firstDay = date.getDay();
             
             let str = "<tr>";
-            for(let i = -3; i <= lastDate; i++){
-                str += `<td>${i <= lastDate && i > 0 ? i : " "}</td>`;
-                if(i % 7 == 3){
+            let count = 1;    
+            for(let i = 1 - firstDay; ' '; i++){
+                str += '<td>';
+                str += i <= lastDate && i >= 1? i : ' ';
+                str += '</td>';
+                count++;
+                console.log(count-1, i);
+                if(lastDate <= i && (count-1) % 7 == 0) break;
+                if(i % 7 == (7 - firstDay) % 7) {
                     str += "</tr><tr>"
                 }
             }
-            str +="<tr>"
+            str +="</tr>"
             document.querySelector("table tbody").innerHTML = str;
         }
 

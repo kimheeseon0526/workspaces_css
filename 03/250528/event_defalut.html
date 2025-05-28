@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--  기본 이벤트
+        태그 중 기본 이벤트가 존재하는 a, form, button  
+    -->
+        <a href="http://www.naver.com">네이버</a>
+        <textarea></textarea>
+        <div class ="keyup"></div>
+        <div class="keydown"></div>
+        <div class="keypress"></div>
+        <script>
+            //click, mousemove, keydown, keyup?, focus?, blur?
+            document.querySelector("a").onclick = function() {
+                // alert("hi");
+                // event.preventDefault(); //hi는 뜨지만 네이버로 링크 이동하지 않음
+                // return false; //기본 이벤트 방지 + 이벤트 전파 차단
+                return confirm(this.href + "(으)로 이동하시겠습니까?")
+                //확인 누르면 네이버 이동, 취소 누르면 아무 이벤트 안함
+            }
+
+            const ta =  document.querySelector("textarea");
+            ta.onkeydown = function(){ //특수한 경우
+               document.querySelector(".keydown").innerHTML = `keydown : ${this.value.length}`
+            }
+            ta.onkeyup = function() { //제일 많이 사용
+                document.querySelector(".keyup").innerHTML = `keyup : ${this.value.length}`
+            }
+            ta.onkeypress = function() {
+                document.querySelector(".keypress").innerHTML = `keypress : ${this.value.length}`
+            }
+        </script>
+</body>
+</html>

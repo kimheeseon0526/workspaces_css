@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+    <script>
+        //click > event type, name
+        //onclick > event attr(이벤트 속성)
+        //event handler
+    </script>
+</head>
+<body>
+    <a href="#" onclick="alert(this.innerHTML); alert(10)">클릭 미</a>  
+    <!-- a 태그 안에 직접 줄 수도 있다 : 인라인 이벤트-->
+     <button id="btn1">버튼1</button>
+     <button id="btn2">버튼2</button>
+     <button id="btn3">버튼3</button>
+    <script>
+        // const aTag =  document.querySelector("a")
+        // aTag.onclick = function(){  //이벤트 핸들러(리스너)
+        //     alert(this.innerHTML);
+        // }
+
+        //이벤트 속성에 부여되는 함수 : 이벤트 핸들러(리스너)
+        const btns = document.getElementsByTagName("button");
+        console.log(btns);
+        console.log(btns.length);   //3
+        
+        const btn = document.getElementById("btn1");
+        console.log(btn);
+        //btn1을 클릭했을 때 현재 시간 정보를 alert로 출력
+        btn.onclick = function() {
+            let date = new Date();
+            alert(date.toLocaleString());
+            // alert(new Date()); 도 같은 말
+            }
+             btn.onclick = function() {
+                alert(2);
+            }//date가 덮어씌워져서 2만 출력됨
+            const btn2 =  document.querySelector("#btn2");
+            btn2.addEventListener("click", function() {
+                alert("첫번째 버튼 클릭")
+            });
+            btn2.addEventListener("click", function() {
+                console.log(event);
+                // console.log(e);
+                alert("두번째 버튼 클릭")
+            });
+            btn2.addEventListener("click", () => alert("세번째 버튼 클릭"));
+        
+        
+        
+    </script>
+</body>
+</html>
