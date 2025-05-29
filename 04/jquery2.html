@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {border-collapse: collapse; margin: 0 auto;}
+        table, td {border: 1px solid black;}
+        td {padding: 16px;}
+    </style>
+     <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+</head>
+<body>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+        </tr>
+    </table>
+    <script>
+        //짝수번째 행의 배경색 : 회색
+        // $("table").css('border', '1px').css('border', 'solid');
+
+        $("tr:even").css('background', 'gray');
+        //홀수번째 행의 배경색 : 노랑
+        $("tr:odd").css('background', 'yellow');
+        //짝수번째 열의 글자색 : 빨강
+        $("td:nth-child(odd)").css('color', 'red');
+        //홀수번째 열의 글자색 : 오렌지색
+        $("td:nth-child(even)").css('color', 'blue');
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        //DOM
+
+    </script>
+</head>
+<body>
+    <p>안녕하세요1</p>
+    <p>안녕하세요2</p>
+    <p>안녕하세요3</p>
+    <p>안녕하세요4</p>
+    <script>
+        console.log($("p").text());
+        //기본문법
+        //$(선택자).동작함수().동작함수()
+        //chaining : 여러 메서드를 체인처럼 묶어 선택한 엘리먼트에서 차례로 실행
+        //this를 반환한다 -> 그래야 다음 메서드 적용 가능 
+        $("p").css('color', 'red')
+        .filter(":lt(2)")   //2번 인덱스보다 작은 아이만 아래 메서드 적용
+        .css({textAlign : 'center'})
+        .click(function() {
+            alert($(this).text());
+        })
+        //$ : 타입은 함수(호출한다)
+        console.log($); //ƒ (e,t){return new ce.fn.init(e,t)}
+        console.log(jQuery);
+        //$(string), $(object), $(function)
+
+        
+
+    </script>
+</body>
+</html>

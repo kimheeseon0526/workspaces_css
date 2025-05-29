@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>뉴스기사 가져오기</button>
+        <ul>
+            
+        </ul>
+    <script>
+        // const xhr = new XMLHttpRequest(); //xhr객체 생성
+        document.querySelector("button").addEventListener("click", e => {
+            const xhr = new XMLHttpRequest();
+            xhr.open("GET", "https://www.yonhapnewstv.co.kr/category/news/culture/feed/");    //파일을 열어라
+            
+            xhr.onreadystatechange = () => {
+                if(xhr.status == 200 && xhr.readyState === 4) {
+                    console.log(xhr.responseXML);
+                    // const data = xhr.responseXML;
+                    // console.log(data.querySelectorAll("student"));
+                    // let str = "";
+                    // data.querySelectorAll("student").forEach( s => {    //s : 학생 한명
+                    //     str += `<li>
+                    //         ${s.querySelector("no").innerHTML}
+                    //         ${s.querySelector("name").innerHTML}
+                    //         ${s.querySelector("score").innerHTML}
+                    //     </li>`;
+                        // 출력값 (리스트로 출력됨 - 학생데이터 가져오기 클릭시, 새로고침없이 여러번 반복 출력도 가능)
+                        // 1 새똥이 90
+                        // 2 개똥이 80
+                    // });
+                    // document.querySelector("ul").innerHTML += str;
+                }
+            }
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        jQuery.noConflict();
+        console.log($);
+        jQuery(function(){
+            jQuery("p").css("color", "red");
+        });
+
+        //IIFE(즉시 실행 함수)
+        (function($) {
+            $(function() {
+                $("p").css("text-align", "center");
+            });
+        })(jQuery);
+        
+    </script>
+</head>
+<body>
+    <p>테스트 문자열</p>
+</body>
+</html>

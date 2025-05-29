@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function myFunc() {
+            console.log("hello");
+            
+        }
+        
+        //let window = {document : {}, location {} ...}
+        // for(let i in window){
+        //     document.write(`<p>${i} :: ${window[i]}</p>`)
+        // }
+
+       window.myFunc();
+
+       onload = function() {
+
+       }
+
+       var num = 10;
+       window.a = "abxd";
+    //    window.alert(window.num);
+    //    alert(a);
+    //    delete window.a;
+
+    
+   
+    
+    </script>
+</head>
+<body>
+    <button>클릭</button>
+    <script>
+        document.querySelector("button").addEventListener("click", function() {
+            let w = window.open("../250528/validation.html", '','width = 300, height = 300, top=500, left=500'); //새창 열기
+            console.log(w);
+
+            // 그 시간 간격으로 지정 함수 계속 수행
+            const inter = setInterval(() => {
+                w.moveBy(10, 10)
+            }, 100);
+
+            setTimeout(() => {
+                w.close();
+                clearInterval(inter);   //inter : interval 그 자체
+            }, 3000)
+            //3초 후에 열렸던 네이버창이 닫힘(한 번 실행)
+      });
+    </script>
+</body>
+</html>
