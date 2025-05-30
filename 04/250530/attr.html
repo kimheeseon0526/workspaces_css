@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function(){
+            $("a").each(function() {
+                console.log($(this).attr("href"), this.href);   //getter
+                $(this).attr("title", $(this).text());  //setter
+                // $(this).attr("title", this.innerText);  //innerText
+                $(this).attr("title", $(this).html());  
+                
+            });
+                $(this).text(); //string 타입
+                $(this).text("abcd").css("color", "red");   
+                // 위의 모든 텍스트 및 컬러가 abcd, red로 바뀜
+                
+                console.log($("div:eq(0)").text());
+                console.log($("div:eq(0)").html());
+
+                $("div:eq(1)").text("<h3>hello</h3>");
+                $("div:eq(2)").html("<h3>hello</h3>");
+                $("div:eq(3)").html(function() {
+                    return "<mark>추가된 텍스트</mark>"
+                })
+                
+                $("div").html(function(i){
+                    return "<h2>" + i + "번째 div </h2>"
+               });
+        })
+    </script>
+</head>
+<body>
+    <p><a href="http://www.naver.com">네이버</a></p>
+    <p><a href="http://www.daum.net">구글</a></p>
+    <p><a href="http://www.google.com">다음</a></p>
+
+    <div>
+        <h1>안녕하슈 <span>hello</span></h1>
+    </div>
+</body>
+</html>
