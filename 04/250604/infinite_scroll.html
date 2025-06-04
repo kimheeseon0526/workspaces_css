@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 { border: 1px solid; padding: 30px; margin: 30px 0;}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        //글리치 debounce
+        let isLoading = false;
+        function loadMoreContent() {
+            if(isLoading) return;
+            isLoading = true;
+
+            if($("body h1").length < 100) {
+                $("h1").css("opacity", "0.3");
+                setTimeout(function() {
+                $("body h1").clone(true, true).each(function(i) {
+                    const idx = $("body h1").length + i + 1;
+                    $(this).find("span").text(idx);
+                    }).appendTo("body");
+
+                    isLoading = false;
+                    $("h1").css("opacity", "1");    //1초 후에 동작하게끔
+                },1000)  
+            }
+            else {
+                isLoading = false;
+            }
+        }
+        $(function() {
+            $("h1").click(function() {
+                console.log($(this).text());
+            })
+            $(window).scroll(function(){
+                //doc.height = win.height + win.scrolltop
+                //문서 높이 = 창높이 + 창스크롤탑 
+
+                // console.log($(this).scrollTop() + $(this).height() + 100 >= $(document).height());
+                // console.log("doc height" + $(document).height());
+                // console.log("win height" + $(window).height());
+                if($(this).scrollTop() + $(this).height() + 100 >= $(document).height()) {
+                    loadMoreContent();
+                }
+                
+            })
+            $("button").click(function() {
+                console.log("doc height" + $(document).height());
+                console.log("win height" + $(window).height());
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>문서 높이 계산</button>
+    <h1>요소 <span>1</span></h1>
+    <h1>요소 <span>2</span></h1>
+    <h1>요소 <span>3</span></h1>
+    <h1>요소 <span>4</span></h1>
+    <h1>요소 <span>5</span></h1>
+    <h1>요소 <span>6</span></h1>
+    <h1>요소 <span>7</span></h1>
+    <h1>요소 <span>8</span></h1>
+    <h1>요소 <span>9</span></h1>
+    <h1>요소 <span>10</span></h1>
+</body>
+</html>

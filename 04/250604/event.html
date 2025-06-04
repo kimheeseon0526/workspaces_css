@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function() {
+            $("<h1>추가된 녀석</h1>").appendTo("body");
+            $("button").click(function() {
+                $("<h1>버튼으로 추가된 녀석</h1>").appendTo("body");
+                // $("h1").click(function() {console.log($(this).text()); })
+            })
+
+            const f = function() {
+                console.log(event.type);   
+            };
+            $("button").on("click dbclick", f);
+
+            $("button").off("click", f);
+
+            //이벤트 위임(현재 있지 않는 대상에 이벤트를 주기 위해)
+            $("body").on("click", "h1", function() {
+                console.log($(this).text());
+            });
+
+            $("h3").on("click", function() {
+                console.log($(this).text());
+                $(this).off("click");
+            })
+
+            $("h3").one("click", function() {
+                console.log("one으로 콘솔");
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <button>추가</button>
+    <h1>원래 있던 녀석</h1>
+    <h3>나는 h3이얌</h3>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script>
+        $(function() {
+            const f = function() {
+                console.log($(this).text());
+            }
+            
+            $("h1").click(f).css("color", "red").click().click().click(); //3번 출력
+            //click(f) : 인자 있음 / click() : 인자 없음
+
+            $("h1").on("click", function() {
+                console.log("official event bind"); 
+            });
+
+            $("h1").trigger("click");
+            //인자가 있을 때는 on, 인자 없을 때는 bind랑 동일
+        })
+    </script>
+</head>
+<body>
+    <h1>하이 난 h1임</h1>
+</body>
+</html>
