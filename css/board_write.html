@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
@@ -15,8 +17,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js"
         integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.25.1/ckeditor.js" integrity="sha512-jJXRE/u6z571DgYqZx5zGCQOQkGDRabQ5w6EX4sFebmMwp8ptn8Zdx/Xq74UJFVP/9x16UM2ta78BoNl22hDBw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ckeditor/4.10.0/ckeditor.js" integrity="sha512-G3gBpAR3yYAoro9SLe2Ki94/3VBY12j9w+v+Sm/AP0e5LNWhOFG/pFLypvpx4+2+tcQfs3rxjPfxx87ABhtZRw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>        
     <title>Document</title>
 
 </head>
@@ -39,32 +41,20 @@
         <!-- nav -->
         <!-- content -->
         <main>
-            <div class="clearfix py-0">
-                <a href="board_write.html" class="btn btn-primary btn-sm float-end"><i class="fa-solid fa-feather"></i> 글쓰기</a>
+            <div class="samll border-bottom border-3 border-primary p-0 pb-2"><a href="#" class="samll"><span class="text-primary">자유 게시판</span> 카테고리</a></div>
+            <div class="small p-0 py-2 ">
+                <input placeholder="title" class="form-control" name="title" id="title">
             </div>
-            <div class="list-group">
-                <div class="list-group-item">
-                    <div class="row text-center aligin-items-center small text-muted">
-                        <div class="col-1 small">글번호</div>
-                        <div class="col-1 small">카테고리</div>
-                        <div class="col text-start">제목</div>
-                        <div class="col-1 small">작성일</div>
-                        <div class="col-1 samll">조회수</div>
-                    </div>
+            <div class="p-0 py-3 ps-1 small border-bottom border-1 border-muted">
+                <textarea name="content" id="editor1" class="form-control resize-none"></textarea>
+            </div>
+            <div>
+                <button class="btn btn-secondary btn-sm"><i class="fa-solid fa-list-ul"></i> 목록</button>
+                <div class="float-end">
+                    <button class="btn btn-outline-primary btn-sm"><i class="fa-solid fa-share-nodes"></i> 글쓰기</button>
                 </div>
-                <a href="#" class="list-group-item list-group-item-action list-group-item-secondary">
-                    <div class="row text-center aligin-items-center small text-muted">
-                        <div class="col-1 small">1</div>
-                        <div class="col-1 small">자유</div>
-                        <div class="col text-start fw-bold text-black">제목</div>
-                        <div class="col-1 small"><span class="samll">25.06.13</span></div>
-                        <div class="col-1 samll"><span class="samll">13</span></div>
-                    </div>
-                </a>
-                    
-                </div>
+            </div>
         </main>
-
     </div>
 
     <!-- footer -->
@@ -89,6 +79,11 @@
                 $(".arrow-area i").fadeOut(200);
             }
         })
+        window.onload = function() {
+            CKEDITOR.replace('editor1', {
+                height : 400
+            })
+        }
     </script>
 </body>
 

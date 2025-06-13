@@ -4,7 +4,11 @@
         body {margin: 0;}
         a {text-decoration: none; color: #222;}
         header, footer {padding: 1em; background: #222; color: #eee; text-align: center;}
+
+        .resize-none {resize: none;}
         .container {width: 1200px; margin: 0 auto;}
+        /* cke 경고창 무시용 */
+        .cke_notifications_area {display: none !important;}
 
         /* nav */
         nav {background: #eee;}
@@ -53,3 +57,5 @@
         main .account > div i {display: inline-block; width: 1px; height: 12px;
                                 background-color: #d3d5d7; margin: 4px 12px 0; vertical-align: top;}
         main::after {display: block; content: ' '; clear: both;} 
+        
+      
